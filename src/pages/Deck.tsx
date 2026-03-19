@@ -4,7 +4,9 @@ import {
   ArrowRight,
   BarChart3,
   Bell,
+  CheckCircle2,
   ChevronRight,
+  Clock,
   FileSpreadsheet,
   LineChart,
   Mail,
@@ -13,20 +15,14 @@ import {
   Sparkles,
   Target,
   TrendingUp,
-  Users,
   Zap,
-  Globe,
-  DollarSign,
-  CheckCircle2,
+  XCircle,
   AlertTriangle,
-  Clock,
-  Eye,
 } from 'lucide-react'
 import './Deck.css'
 
-/* ─────────────── slide definitions ─────────────── */
-
-function SlidesCover() {
+/* ─────── SLIDE 1: COVER ─────── */
+function SlideCover() {
   return (
     <div className="slide slide-cover">
       <div className="slide-cover-bg" />
@@ -36,193 +32,216 @@ function SlidesCover() {
           <span>Visibilty</span>
         </div>
         <h1>
-          Tu data tiene<br />
+          Tus datos ya tienen<br />
           <span className="gradient">las respuestas</span>
         </h1>
         <p className="slide-cover-sub">
           Dashboards inteligentes + insights accionables<br />
-          directo a tu WhatsApp
+          directo a tu WhatsApp, sin complicaciones
         </p>
-        <div className="slide-cover-badge">Pitch Comercial 2026</div>
-      </div>
-    </div>
-  )
-}
-
-function SlidesProblem() {
-  return (
-    <div className="slide slide-two-col">
-      <div className="slide-left">
-        <div className="slide-tag">El Problema</div>
-        <h2>Los negocios estan ciegos ante su propia data</h2>
-        <p className="slide-body">
-          Los duenos y operadores tienen datos dispersos en Excel, Shopify, Google Sheets...
-          pero no tienen tiempo, herramientas ni equipo para convertirlos en decisiones.
-        </p>
-      </div>
-      <div className="slide-right">
-        <div className="problem-cards">
-          <div className="problem-card">
-            <AlertTriangle size={28} className="problem-icon red" />
-            <h4>72% de las PYMEs</h4>
-            <p>no analizan sus datos de ventas regularmente</p>
-          </div>
-          <div className="problem-card">
-            <Clock size={28} className="problem-icon yellow" />
-            <h4>15+ horas/semana</h4>
-            <p>se pierden en reportes manuales y Excel</p>
-          </div>
-          <div className="problem-card">
-            <Eye size={28} className="problem-icon blue" />
-            <h4>89% de los insights</h4>
-            <p>quedan enterrados en hojas de calculo que nadie revisa</p>
-          </div>
+        <div className="slide-cover-badges">
+          <span className="cover-pill">Excel / CSV</span>
+          <span className="cover-pill">Shopify</span>
+          <span className="cover-pill">Google Sheets</span>
+          <span className="cover-pill">WhatsApp</span>
         </div>
       </div>
     </div>
   )
 }
 
-function SlidesSolution() {
+/* ─────── SLIDE 2: PAIN ─────── */
+function SlidePain() {
   return (
     <div className="slide slide-center-wide">
-      <div className="slide-tag">La Solucion</div>
+      <div className="slide-tag">Te suena familiar?</div>
+      <h2>Tu negocio genera datos todos los dias...<br />pero nadie los mira</h2>
+      <div className="pain-grid">
+        <div className="pain-card">
+          <XCircle size={24} className="pain-icon" />
+          <h4>Excels que nadie abre</h4>
+          <p>Reportes que te toma horas armar y que terminan olvidados en una carpeta</p>
+        </div>
+        <div className="pain-card">
+          <AlertTriangle size={24} className="pain-icon" />
+          <h4>Te enteras tarde</h4>
+          <p>Cuando ves que un producto se agoto o las ventas cayeron, ya perdiste plata</p>
+        </div>
+        <div className="pain-card">
+          <Clock size={24} className="pain-icon" />
+          <h4>No tienes tiempo</h4>
+          <p>Estas operando el negocio, no tienes horas para sentarte a analizar numeros</p>
+        </div>
+        <div className="pain-card">
+          <Target size={24} className="pain-icon" />
+          <h4>Decides por intuicion</h4>
+          <p>Sin datos claros, terminas adivinando que promover, que reponer, que cambiar</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ─────── SLIDE 3: SOLUTION ─────── */
+function SlideSolution() {
+  return (
+    <div className="slide slide-center-wide">
+      <div className="slide-tag">La solucion</div>
       <h2>
-        Conecta tu data.<br />
-        Recibe decisiones, <span className="gradient">no graficos</span>.
+        Conecta tu data, recibe<br />
+        <span className="gradient">decisiones en tu WhatsApp</span>
       </h2>
-      <p className="slide-body" style={{ maxWidth: 700, margin: '0 auto 48px' }}>
-        Visibilty conecta tus fuentes de datos (Excel, Shopify, Google Sheets),
-        analiza con IA y te envia insights accionables directo a tu WhatsApp o mail.
+      <p className="slide-body" style={{ maxWidth: 650, margin: '0 auto 48px' }}>
+        Visibilty analiza tus datos con IA y te envia lo que necesitas saber
+        para actuar: alertas, oportunidades y recomendaciones claras.
+        Sin dashboards complicados, sin curva de aprendizaje.
       </p>
       <div className="solution-flow">
         <div className="solution-step">
           <div className="solution-icon"><FileSpreadsheet size={28} /></div>
-          <span>Tu Data</span>
+          <span>Sube tu data</span>
+          <small>Excel, Shopify, Sheets</small>
         </div>
         <ChevronRight size={24} className="solution-arrow" />
         <div className="solution-step">
           <div className="solution-icon accent"><Sparkles size={28} /></div>
-          <span>IA Visibilty</span>
+          <span>IA analiza</span>
+          <small>Patrones y oportunidades</small>
         </div>
         <ChevronRight size={24} className="solution-arrow" />
         <div className="solution-step">
           <div className="solution-icon green"><MessageCircle size={28} /></div>
-          <span>Tu WhatsApp</span>
+          <span>Tu recibes</span>
+          <small>WhatsApp o mail</small>
         </div>
       </div>
     </div>
   )
 }
 
-function SlidesHowItWorks() {
-  return (
-    <div className="slide slide-center-wide">
-      <div className="slide-tag">Como Funciona</div>
-      <h2>3 pasos. 5 minutos. Listo.</h2>
-      <div className="steps-row">
-        <div className="step-box">
-          <div className="step-num">1</div>
-          <h3>Conecta</h3>
-          <p>Sube tu Excel, conecta Shopify o pega el link de tu Google Sheet</p>
-          <div className="step-icons">
-            <ShoppingBag size={20} />
-            <FileSpreadsheet size={20} />
-            <BarChart3 size={20} />
-          </div>
-        </div>
-        <div className="step-box">
-          <div className="step-num">2</div>
-          <h3>Analiza</h3>
-          <p>Nuestra IA procesa tu data, encuentra patrones y oportunidades</p>
-          <div className="step-icons">
-            <Sparkles size={20} />
-            <TrendingUp size={20} />
-            <Target size={20} />
-          </div>
-        </div>
-        <div className="step-box">
-          <div className="step-num">3</div>
-          <h3>Decide</h3>
-          <p>Recibe insights accionables en tu WhatsApp o mail</p>
-          <div className="step-icons">
-            <MessageCircle size={20} />
-            <Mail size={20} />
-            <Bell size={20} />
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function SlidesProduct() {
+/* ─────── SLIDE 4: DEMO WHATSAPP ─────── */
+function SlideWhatsApp() {
   return (
     <div className="slide slide-two-col">
       <div className="slide-left">
-        <div className="slide-tag">Producto</div>
-        <h2>Dashboard + WhatsApp en uno</h2>
+        <div className="slide-tag">Asi se ve en tu celular</div>
+        <h2>Tu negocio te habla por WhatsApp</h2>
         <p className="slide-body">
-          No es solo un dashboard mas. Es inteligencia que llega a ti, cuando y donde la necesitas.
+          Cada mañana recibes un resumen con lo que importa. Si algo urgente pasa,
+          te avisa al toque. Y puedes responder para tomar accion.
         </p>
-        <ul className="check-list">
-          <li><CheckCircle2 size={18} /> Dashboards auto-generados desde tu data</li>
-          <li><CheckCircle2 size={18} /> Insights con IA: te dice QUE hacer</li>
-          <li><CheckCircle2 size={18} /> Alertas por WhatsApp en tiempo real</li>
-          <li><CheckCircle2 size={18} /> Reportes automaticos (diario/semanal/mensual)</li>
-          <li><CheckCircle2 size={18} /> Deteccion de anomalias y oportunidades</li>
-          <li><CheckCircle2 size={18} /> Responde al chat para tomar accion</li>
-        </ul>
+        <div className="wsp-examples">
+          <div className="wsp-example">
+            <span className="wsp-ex-tag red">Alerta</span>
+            "Stock de Runner Pro se agota en 3 dias. Repon ahora."
+          </div>
+          <div className="wsp-example">
+            <span className="wsp-ex-tag green">Oportunidad</span>
+            "Outdoor crecio 45%. Aumenta ads en esa categoria."
+          </div>
+          <div className="wsp-example">
+            <span className="wsp-ex-tag blue">Reporte</span>
+            "Ventas semana: $847K (+23%). Mejor dia: jueves."
+          </div>
+        </div>
       </div>
       <div className="slide-right">
-        <div className="product-mockup">
-          <div className="mockup-browser">
-            <div className="mockup-browser-dots">
-              <span className="mdot r" /><span className="mdot y" /><span className="mdot g" />
+        <div className="deck-phone">
+          <div className="dp-notch" />
+          <div className="dp-header">
+            <div className="dp-avatar">
+              <Sparkles size={14} />
             </div>
-            <div className="mockup-browser-body">
-              <div className="mini-cards">
-                <div className="mini-card">
-                  <div className="mc-label">Ventas</div>
-                  <div className="mc-val">$4.2M</div>
-                  <div className="mc-change">+23%</div>
-                </div>
-                <div className="mini-card">
-                  <div className="mc-label">Productos</div>
-                  <div className="mc-val">1,847</div>
-                  <div className="mc-change">+12</div>
-                </div>
-                <div className="mini-card">
-                  <div className="mc-label">Conversion</div>
-                  <div className="mc-val">3.8%</div>
-                  <div className="mc-change">+0.4pp</div>
-                </div>
-              </div>
-              <div className="mini-bars">
-                {[65, 45, 80, 55, 90, 70, 85, 60].map((h, i) => (
-                  <div key={i} className="mini-bar" style={{ height: `${h}%` }} />
+            <div>
+              <div className="dp-name">Visibilty AI</div>
+              <div className="dp-status">en linea</div>
+            </div>
+          </div>
+          <div className="dp-chat">
+            <div className="dp-msg">Buen dia! Aqui va tu resumen semanal de ventas 📊</div>
+            <div className="dp-msg">
+              <span className="dp-tag green">Ventas</span>
+              Esta semana: <strong>$847,320</strong> (+23% vs anterior). Tu mejor dia fue jueves con $189K.
+            </div>
+            <div className="dp-msg">
+              <span className="dp-tag red">Urgente</span>
+              "Zapatilla Runner Pro" se agota en ~3 dias. Recomiendo reponer 200 unidades hoy.
+            </div>
+            <div className="dp-msg">
+              <span className="dp-tag blue">Oportunidad</span>
+              Categoria Outdoor crecio 45%. Considera meterle mas presupuesto a ads.
+            </div>
+            <div className="dp-msg sent">Dale, repon las 200 y sube el budget de Outdoor!</div>
+            <div className="dp-msg">Listo! Orden de reposicion creada. Te aviso cuando haya novedades.</div>
+          </div>
+          <div className="dp-input">
+            <div className="dp-input-field">Mensaje</div>
+            <div className="dp-input-send"><ArrowRight size={14} /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ─────── SLIDE 5: DASHBOARD ─────── */
+function SlideDashboard() {
+  return (
+    <div className="slide slide-center-wide">
+      <div className="slide-tag">Dashboard inteligente</div>
+      <h2>Todo tu negocio en una pantalla</h2>
+      <p className="slide-body" style={{ maxWidth: 600, margin: '0 auto 40px' }}>
+        Dashboards que se generan solos a partir de tu data. Sin configurar nada.
+        Y cada numero viene con una recomendacion de que hacer.
+      </p>
+      <div className="deck-dashboard">
+        <div className="dd-dots"><span className="mdot r" /><span className="mdot y" /><span className="mdot g" /></div>
+        <div className="dd-body">
+          <div className="dd-cards">
+            <div className="dd-card">
+              <div className="dd-label">Ventas del mes</div>
+              <div className="dd-value">$4.2M</div>
+              <div className="dd-change up"><TrendingUp size={13} /> +23%</div>
+            </div>
+            <div className="dd-card">
+              <div className="dd-label">Productos activos</div>
+              <div className="dd-value">1,847</div>
+              <div className="dd-change up"><TrendingUp size={13} /> 12 nuevos</div>
+            </div>
+            <div className="dd-card">
+              <div className="dd-label">Conversion</div>
+              <div className="dd-value">3.8%</div>
+              <div className="dd-change up"><TrendingUp size={13} /> +0.4pp</div>
+            </div>
+            <div className="dd-card">
+              <div className="dd-label">Ticket promedio</div>
+              <div className="dd-value">$52K</div>
+              <div className="dd-change up"><TrendingUp size={13} /> +8%</div>
+            </div>
+          </div>
+          <div className="dd-chart-row">
+            <div className="dd-chart">
+              <div className="dd-chart-title">Ventas por semana</div>
+              <div className="dd-bars">
+                {[50, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((h, i) => (
+                  <div key={i} className="dd-bar" style={{ height: `${h}%` }} />
                 ))}
               </div>
             </div>
-          </div>
-          <div className="mockup-phone-small">
-            <div className="mp-header">
-              <div className="mp-avatar" />
-              <div>
-                <div className="mp-name">Visibilty AI</div>
-                <div className="mp-status">en linea</div>
+            <div className="dd-insights">
+              <div className="dd-insight-title">Insights IA</div>
+              <div className="dd-insight-row">
+                <span className="dd-tag red">Urgente</span>
+                Stock Runner Pro: 3 dias
               </div>
-            </div>
-            <div className="mp-msgs">
-              <div className="mp-msg">
-                <span className="mp-tag red">Urgente</span>
-                Stock Runner Pro se agota en 3 dias
+              <div className="dd-insight-row">
+                <span className="dd-tag green">Crecer</span>
+                Outdoor +45% esta semana
               </div>
-              <div className="mp-msg">
-                <span className="mp-tag green">Crecimiento</span>
-                Outdoor subio 45% esta semana
+              <div className="dd-insight-row">
+                <span className="dd-tag blue">Tip</span>
+                Margen Accesorios 2x promedio
               </div>
-              <div className="mp-msg sent">Si, repon 200 unidades!</div>
             </div>
           </div>
         </div>
@@ -231,41 +250,94 @@ function SlidesProduct() {
   )
 }
 
-function SlidesMarket() {
+/* ─────── SLIDE 6: BENEFITS ─────── */
+function SlideBenefits() {
   return (
     <div className="slide slide-center-wide">
-      <div className="slide-tag">Mercado</div>
-      <h2>Un mercado enorme y desatendido</h2>
-      <p className="slide-body" style={{ maxWidth: 650, margin: '0 auto 48px' }}>
-        Millones de PYMEs y e-commerces en LATAM generan datos pero no los aprovechan.
-        Las herramientas actuales son caras, complejas o no hablan su idioma.
+      <div className="slide-tag">Que ganas con Visibilty</div>
+      <h2>Menos tiempo en datos,<br /><span className="gradient">mejores decisiones</span></h2>
+      <div className="benefits-grid">
+        <div className="benefit-card">
+          <div className="benefit-icon"><Clock size={24} /></div>
+          <h4>Ahorra 15+ horas/semana</h4>
+          <p>Cero reportes manuales. Todo se genera y llega automaticamente.</p>
+        </div>
+        <div className="benefit-card">
+          <div className="benefit-icon"><Bell size={24} /></div>
+          <h4>Enterate antes, no despues</h4>
+          <p>Alertas proactivas de stock bajo, caidas en ventas y anomalias.</p>
+        </div>
+        <div className="benefit-card">
+          <div className="benefit-icon"><Sparkles size={24} /></div>
+          <h4>Insights, no solo numeros</h4>
+          <p>La IA te dice QUE hacer, no solo te muestra graficos bonitos.</p>
+        </div>
+        <div className="benefit-card">
+          <div className="benefit-icon"><MessageCircle size={24} /></div>
+          <h4>En tu WhatsApp, no en otro app</h4>
+          <p>Sin descargar nada nuevo. La info llega donde ya estas.</p>
+        </div>
+        <div className="benefit-card">
+          <div className="benefit-icon"><Zap size={24} /></div>
+          <h4>Setup en 5 minutos</h4>
+          <p>Sube tu Excel o conecta Shopify. Primer dashboard listo al tiro.</p>
+        </div>
+        <div className="benefit-card">
+          <div className="benefit-icon"><Target size={24} /></div>
+          <h4>Adaptado a tu negocio</h4>
+          <p>Los insights se ajustan a tu industria, tus productos, tu contexto.</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ─────── SLIDE 7: INTEGRACIONES ─────── */
+function SlideIntegrations() {
+  return (
+    <div className="slide slide-center-wide">
+      <div className="slide-tag">Integraciones</div>
+      <h2>Se conecta con lo que ya usas</h2>
+      <p className="slide-body" style={{ maxWidth: 550, margin: '0 auto 48px' }}>
+        No importa donde tengas tu data. Visibilty la trae, la analiza y te la devuelve como decisiones.
       </p>
-      <div className="market-circles">
-        <div className="market-circle tam">
-          <div className="mc-value">$12B</div>
-          <div className="mc-name">TAM</div>
-          <div className="mc-desc">BI & Analytics para SMBs global</div>
+      <div className="integrations-grid">
+        <div className="integration-card">
+          <ShoppingBag size={32} />
+          <h4>Shopify</h4>
+          <p>Conecta tu tienda en 1 click. Ventas, productos, inventario, ordenes.</p>
         </div>
-        <div className="market-circle sam">
-          <div className="mc-value">$2.4B</div>
-          <div className="mc-name">SAM</div>
-          <div className="mc-desc">PYMEs y e-commerce en LATAM</div>
+        <div className="integration-card">
+          <FileSpreadsheet size={32} />
+          <h4>Excel / CSV</h4>
+          <p>Sube cualquier archivo. Lo parseamos automaticamente.</p>
         </div>
-        <div className="market-circle som">
-          <div className="mc-value">$180M</div>
-          <div className="mc-name">SOM</div>
-          <div className="mc-desc">Chile, Mexico, Colombia (Y1-Y3)</div>
+        <div className="integration-card">
+          <BarChart3 size={32} />
+          <h4>Google Sheets</h4>
+          <p>Pega el link y se sincroniza en tiempo real.</p>
+        </div>
+        <div className="integration-card output">
+          <MessageCircle size={32} />
+          <h4>WhatsApp</h4>
+          <p>Recibe alertas, reportes y responde para tomar accion.</p>
+        </div>
+        <div className="integration-card output">
+          <Mail size={32} />
+          <h4>Email</h4>
+          <p>Reportes detallados con graficos directo a tu bandeja.</p>
         </div>
       </div>
     </div>
   )
 }
 
-function SlidesBusinessModel() {
+/* ─────── SLIDE 8: PRICING ─────── */
+function SlidePricing() {
   return (
     <div className="slide slide-center-wide">
-      <div className="slide-tag">Modelo de Negocio</div>
-      <h2>SaaS simple, valor desde el dia 1</h2>
+      <div className="slide-tag">Planes</div>
+      <h2>Simple, transparente, sin letra chica</h2>
       <div className="pricing-grid">
         <div className="pricing-card">
           <div className="pricing-name">Starter</div>
@@ -274,12 +346,12 @@ function SlidesBusinessModel() {
             <li>1 fuente de datos</li>
             <li>Dashboard basico</li>
             <li>Reportes semanales</li>
-            <li>WhatsApp (50 alertas/mes)</li>
+            <li>50 alertas WhatsApp/mes</li>
           </ul>
-          <div className="pricing-target">PYMEs pequeñas</div>
+          <div className="pricing-target">Para negocios que parten</div>
         </div>
         <div className="pricing-card featured">
-          <div className="pricing-badge">Popular</div>
+          <div className="pricing-badge">Mas elegido</div>
           <div className="pricing-name">Pro</div>
           <div className="pricing-price">$79<span>/mes</span></div>
           <ul className="pricing-features">
@@ -293,58 +365,53 @@ function SlidesBusinessModel() {
           <div className="pricing-target">E-commerce en crecimiento</div>
         </div>
         <div className="pricing-card">
-          <div className="pricing-name">Enterprise</div>
+          <div className="pricing-name">Business</div>
           <div className="pricing-price">$249<span>/mes</span></div>
           <ul className="pricing-features">
             <li>Fuentes ilimitadas</li>
-            <li>API access</li>
             <li>Multi-usuario</li>
             <li>Integraciones custom</li>
+            <li>API access</li>
             <li>Soporte prioritario</li>
           </ul>
-          <div className="pricing-target">Cadenas y retailers</div>
+          <div className="pricing-target">Cadenas y operaciones grandes</div>
         </div>
       </div>
+      <p className="pricing-note">Todos los planes incluyen 14 dias gratis. Sin tarjeta de credito.</p>
     </div>
   )
 }
 
-function SlidesTraction() {
+/* ─────── SLIDE 9: RESULTS ─────── */
+function SlideResults() {
   return (
     <div className="slide slide-center-wide">
-      <div className="slide-tag">Traccion & Roadmap</div>
-      <h2>Donde estamos y a donde vamos</h2>
-      <div className="traction-timeline">
-        <div className="traction-item done">
-          <div className="traction-dot" />
-          <div className="traction-content">
-            <div className="traction-date">Q1 2026</div>
-            <h4>MVP lanzado</h4>
-            <p>Landing, conexion Excel/Shopify, dashboard basico, alertas WhatsApp</p>
-          </div>
+      <div className="slide-tag">Resultados</div>
+      <h2>Lo que logras con Visibilty</h2>
+      <div className="results-grid">
+        <div className="result-card">
+          <div className="result-value">5 min</div>
+          <div className="result-label">para tener tu primer dashboard</div>
+          <div className="result-sub">Sube tu archivo y listo</div>
         </div>
-        <div className="traction-item current">
-          <div className="traction-dot" />
-          <div className="traction-content">
-            <div className="traction-date">Q2 2026</div>
-            <h4>Beta privada</h4>
-            <p>50 negocios beta, insights IA, Google Sheets, reportes automaticos</p>
-          </div>
+        <div className="result-card">
+          <div className="result-value">15+ hrs</div>
+          <div className="result-label">que te ahorras por semana</div>
+          <div className="result-sub">Cero reportes manuales</div>
         </div>
-        <div className="traction-item">
-          <div className="traction-dot" />
-          <div className="traction-content">
-            <div className="traction-date">Q3 2026</div>
-            <h4>Lanzamiento publico</h4>
-            <p>Planes pagados, integraciones avanzadas, app mobile</p>
-          </div>
+        <div className="result-card">
+          <div className="result-value">85%</div>
+          <div className="result-label">de insights son accionables</div>
+          <div className="result-sub">No solo datos, decisiones</div>
         </div>
-        <div className="traction-item">
-          <div className="traction-dot" />
-          <div className="traction-content">
-            <div className="traction-date">Q4 2026</div>
-            <h4>Expansion LATAM</h4>
-            <p>Mexico y Colombia, partnerships con Shopify, 500+ clientes</p>
+      </div>
+      <div className="results-quote">
+        <p>"Antes me demoraba medio dia haciendo reportes en Excel. Ahora me llegan solos al WhatsApp con recomendaciones claras. Game changer."</p>
+        <div className="results-author">
+          <div className="results-avatar">M</div>
+          <div>
+            <strong>Maria Lopez</strong>
+            <span>Dueña, Tienda Outdoor Chile</span>
           </div>
         </div>
       </div>
@@ -352,94 +419,8 @@ function SlidesTraction() {
   )
 }
 
-function SlidesTeam() {
-  return (
-    <div className="slide slide-center-wide">
-      <div className="slide-tag">Equipo</div>
-      <h2>Quienes construyen Visibilty</h2>
-      <p className="slide-body" style={{ maxWidth: 600, margin: '0 auto 48px' }}>
-        Un equipo que combina experiencia en producto, data y negocios en LATAM.
-      </p>
-      <div className="team-grid">
-        <div className="team-card">
-          <div className="team-avatar">
-            <Users size={32} />
-          </div>
-          <h4>CEO / Product</h4>
-          <p className="team-role">Estrategia, producto y go-to-market</p>
-          <div className="team-tags">
-            <span>Product</span>
-            <span>Growth</span>
-          </div>
-        </div>
-        <div className="team-card">
-          <div className="team-avatar">
-            <Zap size={32} />
-          </div>
-          <h4>CTO / Engineering</h4>
-          <p className="team-role">Arquitectura, IA y desarrollo full-stack</p>
-          <div className="team-tags">
-            <span>AI/ML</span>
-            <span>Full-Stack</span>
-          </div>
-        </div>
-        <div className="team-card">
-          <div className="team-avatar">
-            <Globe size={32} />
-          </div>
-          <h4>Head of Growth</h4>
-          <p className="team-role">Ventas, partnerships y expansion regional</p>
-          <div className="team-tags">
-            <span>Sales</span>
-            <span>LATAM</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function SlidesAsk() {
-  return (
-    <div className="slide slide-cover">
-      <div className="slide-cover-bg" />
-      <div className="slide-cover-content">
-        <div className="slide-tag" style={{ marginBottom: 24 }}>El Ask</div>
-        <h2 style={{ fontSize: 'clamp(32px, 5vw, 56px)', marginBottom: 16 }}>
-          Buscamos <span className="gradient">$500K</span> pre-seed
-        </h2>
-        <p className="slide-body" style={{ maxWidth: 550, margin: '0 auto 40px', fontSize: 18 }}>
-          Para construir el equipo core, lanzar la beta publica y adquirir los primeros 500 clientes en Chile, Mexico y Colombia.
-        </p>
-        <div className="ask-allocation">
-          <div className="ask-item">
-            <DollarSign size={20} />
-            <div>
-              <strong>40%</strong>
-              <span>Producto & Engineering</span>
-            </div>
-          </div>
-          <div className="ask-item">
-            <TrendingUp size={20} />
-            <div>
-              <strong>35%</strong>
-              <span>Growth & Ventas</span>
-            </div>
-          </div>
-          <div className="ask-item">
-            <Users size={20} />
-            <div>
-              <strong>25%</strong>
-              <span>Operaciones & Equipo</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function SlidesClose() {
+/* ─────── SLIDE 10: CTA ─────── */
+function SlideCTA() {
   return (
     <div className="slide slide-cover">
       <div className="slide-cover-bg" />
@@ -453,36 +434,41 @@ function SlidesClose() {
           <span className="gradient">Empieza a decidir.</span>
         </h1>
         <p className="slide-cover-sub" style={{ marginBottom: 40 }}>
-          La inteligencia que tu negocio necesita,<br />
-          en el chat que ya usas todos los dias.
+          Prueba gratis por 14 dias.<br />
+          Sin tarjeta de credito. Setup en 5 minutos.
         </p>
-        <div className="close-contact">
+        <div className="cta-buttons">
           <a href="/" className="deck-btn-primary">
-            <Globe size={18} /> visibilty.vercel.app
+            <Zap size={18} /> Comenzar gratis
           </a>
           <a href="mailto:hello@visibilty.com" className="deck-btn-secondary">
-            <Mail size={18} /> hello@visibilty.com
+            <Mail size={18} /> Agendar demo
           </a>
+        </div>
+        <div className="cta-trust">
+          <div className="cta-trust-item"><CheckCircle2 size={14} /> 14 dias gratis</div>
+          <div className="cta-trust-item"><CheckCircle2 size={14} /> Sin tarjeta</div>
+          <div className="cta-trust-item"><CheckCircle2 size={14} /> Setup en 5 min</div>
+          <div className="cta-trust-item"><CheckCircle2 size={14} /> Cancela cuando quieras</div>
         </div>
       </div>
     </div>
   )
 }
 
-/* ─────────────── main deck component ─────────────── */
+/* ─────── MAIN DECK ─────── */
 
 const slides = [
-  SlidesCover,
-  SlidesProblem,
-  SlidesSolution,
-  SlidesHowItWorks,
-  SlidesProduct,
-  SlidesMarket,
-  SlidesBusinessModel,
-  SlidesTraction,
-  SlidesTeam,
-  SlidesAsk,
-  SlidesClose,
+  SlideCover,
+  SlidePain,
+  SlideSolution,
+  SlideWhatsApp,
+  SlideDashboard,
+  SlideBenefits,
+  SlideIntegrations,
+  SlidePricing,
+  SlideResults,
+  SlideCTA,
 ]
 
 export default function Deck() {
@@ -516,17 +502,12 @@ export default function Deck() {
 
   return (
     <div className="deck">
-      {/* Slide area */}
       <div className="deck-viewport">
-        <div
-          className={`deck-slide-wrapper ${direction}`}
-          key={current}
-        >
+        <div className={`deck-slide-wrapper ${direction}`} key={current}>
           <CurrentSlide />
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="deck-controls">
         <a href="/" className="deck-home-link">
           <div className="deck-logo-icon small"><LineChart size={14} /></div>
